@@ -1,0 +1,310 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Orbitron&display=swap');
+
+/* Alteração do Box Model para border-box */
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html { 
+    /* Comportamento de rolagem:
+    suave, transição durante a rolagem */
+    scroll-behavior: smooth;
+    
+    /* Medidas REM usarão este valor como referência */
+    font-size: 18px;
+}
+
+/* Definindo fonte padrão e plano de fundo para o site */
+body {
+    font-family: 'Open Sans', Verdana, sans-serif;
+
+    /* background-image: 
+    linear-gradient(45deg, blue,red, yellow); */
+    background-image: 
+        url(../imagens/textura-fundo.png);
+
+    background-attachment:fixed; 
+}
+
+/* Tornar imagens responsivas,
+respeitando o tamanho máximo original */
+img { max-width: 100%; }
+
+/* CSS Reset 
+Removemos margem e espaçamento dos elementos
+indicados. Desta forma fazemos com que iniciem
+de uma forma consistente em qualquer navegador */
+body, h1, h2, h3, p, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* Para todos os links, removemos underline
+e mudamos a cor */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Cabeçalho e rodapé recebem
+uma cor de fundo e alinhamento geral centralizado */
+header, footer {
+    background-color:
+     rgba(61, 95, 206, 0.52);
+    text-align: center;
+}
+
+/* Apenas o cabeçalho recebe uma borda inferior
+e uma margem inferior */
+header {
+    border-bottom: solid 1px;
+    margin-bottom: 10px;
+}
+
+/* Apenas o rodapé recebe uma borda superior */
+footer { border-top: solid 1px; }
+
+/* Todos os articles recebem cor de fundo,
+espaçamento relativo, sombra e margem superior e inferior */
+article {
+    background-color: white;
+    padding: 2%;
+    box-shadow: 1px 1px 5px grey;
+    margin: 10px 0;
+}
+
+/* Área geral de conteúdo recebe
+uma largura de 95% e margem automática, o que
+a faz ficar centralizada com um pouco de espaço
+dos lados */
+main {
+    width: 95%;
+    margin: auto;
+}
+
+/* Definimos fonte para os elementos indicados */
+h1, nav, h2, h3, button {
+    font-family: Orbitron, sans-serif;
+}
+
+/* Definimos espaçamento superior/inferior para
+os elementos indicados */
+h2, h3, p { padding: 1% 0; }
+
+/* Mudamos o tamanho de letra para o h2 contido no rodapé */
+footer h2 { font-size: 1rem; }
+
+/* Mudamos a largura das imagens contidas no rodapé.
+Isso fará a altura mudar também, de maneira proporcional */
+footer img { width: 30px; }
+
+/* Mudamos o tamanho de letra para o p contido no rodapé */
+footer p { font-size: .6rem; }
+
+/* Todas as sections e figures recebem uma margem 
+superior/inferior de 2%*/
+section, figure { margin: 2% 0; }
+
+/* Legendas do figure recebem alinhamento centralizado
+e ficam em negrito */
+figcaption {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* Regras para o link de voltar ao topo/inicio */
+
+/* O texto fica fixo, posicionado
+à direita e abaixo em relação à tela */
+#voltar {
+    position: fixed;
+    right: 5px;
+    bottom: 0;
+}
+
+/* O link contido no voltar recebe uma cor de fundo,
+cor de texto, espaçamento fixo e tamanho de letra */
+#voltar a {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: .7rem;
+}
+
+/* Estados de passar o mouse e usar o TAB (focus) no
+link de voltar */
+#voltar a:hover, #voltar a:focus {
+    background-color: yellow;
+    color: black;
+}
+
+/* 25/11 */
+
+/* Para facilitar a visualização
+das áreas no layout */
+/* h1 { background-color: red;}
+h1 a { background-color:green;}
+nav { background-color:yellow;}
+nav a { background-color:blue;} */
+
+/* Criando containers Flex 
+Aqui habilitamos o modo flex para todos estes elementos.
+Desta forma podemos fazer ajustes de posicionamento e alinhamento
+usando propriedades flex */
+h1, h1 a, nav, nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Para o h1 inteiro, ajustamos espaçamento 
+superior/inferior e tamanho de letra */
+h1 {
+    padding: 5px 0;
+    font-size: 2.2rem;
+}
+
+/* Para a imagem (logo) dentro do h1, ajustamos o tamanho */
+h1 img { width: 50px; }
+
+/* Para os links contidos no nav,
+ajustamos tamanho de letra, negrito, altura e largura */
+nav a {
+    font-size: 1rem;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+}
+
+/* Estados ao passar o mouse e usar o TAB nos links */
+nav a:hover, nav a:focus {
+    background-color: black;
+    color: white;
+}
+
+
+/* Regras para elementos do formulário  */
+
+/* Para os campos input (nome, email, telefone, assunto) e textarea
+(mensagem), ajustamos borda, tamanho de letra, largura e espaçamento */
+input, textarea {
+    border: solid 2px;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 1%;
+}
+
+/* Rótulos dos campos em negrito */
+label { font-weight: bold;}
+
+/* Botão do formulário, tiramos borda, ajustamos espaçamento,
+negrito, fundo, cor e tamanho de letra */
+button {
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    font-size: .9rem;
+}
+
+/* Estados do botão */
+button:hover, button:focus {
+    background-color: darkblue;
+    cursor: pointer; /* mudamos o ponteiro do mouse */
+}
+
+
+/* Regras de Media Queries */
+
+/* 1o Breakpoint
+Media Query para telas a partir de 700px */
+@media screen and (min-width: 700px){
+    /* Habilitamos o modo flex para a div que 
+    envolve o conteúdo do cabeçalho. Isto permite mexer
+    no conteúdo do cabeçalho sem prejudicar o cabeçalho em si. */
+    header div {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin: auto;
+    }
+
+    /* Habilitamos o flex para a div que envolve
+    as seções e figures */
+    .grupo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Ajustamos a largura das seções e figures */
+    .grupo section, .grupo figure {
+        width: 49%;
+    }
+}
+
+/* 2o Breakpoint
+Media Query para telas a partir de 850px */
+@media screen and (min-width: 850px){
+    /* Aumentamos o tamanho padrão de fonte.
+    Como estamos usamos REM em outros lugares do CSS, na prática, tudo
+    mudará automaticamente. */
+    html { font-size: 20px; }
+
+    /* Ajustamos um tamanho máximo para o formulário
+    e o deixamos no meio. */
+    form {
+        max-width: 850px;
+        margin: auto;
+    }
+}
+
+/* 3o Breakpoint
+Media Query para telas a partir de 1000px */
+@media screen and (min-width: 1000px){
+    /* Limitamos o tamanho das áreas indicadas,
+    evitando que o site cresça lateralmente sem controle */
+    header div, main { max-width: 1000px; }
+
+    /* Fizemos o logo voltar ao tamanho original (automático) */
+    h1 img { width: auto; }
+
+    /* Definimos uma largura para o nav, 
+    fazendo-o ocupar um espaço maior que o original */
+    nav { width: 40%; }
+
+    /* Definimos uma altura para os links */
+    nav a { height: 75px; }
+
+    /* Fixamos o cabeçalho */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+    }
+    
+    /* O padding-top abaixo foi necessário
+    para que os elementos indicados não ficassem
+    escondidos atrás do cabeçalho */
+    #o-que-fazemos, #nossas-equipes,
+    #contato, #topo {
+        padding-top: 80px;
+    }
+
+    /* Escondemos o link de voltar (opcional) */
+    #voltar { display: none; }
+}
+
+
+
+
+
+
+
+
